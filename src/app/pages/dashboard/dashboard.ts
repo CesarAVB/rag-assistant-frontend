@@ -14,6 +14,6 @@ export class DashboardComponent {
   features = [
     { title: 'Chat assistido', desc: 'Converse com o assistente e receba respostas rápidas.', icon: 'comments', route: '/chat' },
     { title: 'Upload de documentos', desc: 'Envie PDFs e outros arquivos para consulta e análise.', icon: 'file-upload', route: '/upload' },
-    { title: 'Relatórios simples', desc: 'Resumos e estatísticas básicas.', icon: 'chart-line', route: '' }
+    { title: 'Base de Conhecimento', desc: 'Busque e consulte documentos indexados.', icon: 'database', route: '/documents' }
   ];
 }

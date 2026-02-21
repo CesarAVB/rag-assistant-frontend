@@ -1,1 +1,103 @@
-<p>documents works!</p>
+<div class="upload-wrapper container py-4">
+  <div class="upload-card card shadow-sm">
+
+    <!-- Cabeçalho (igual ao Upload) -->
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div class="header-left">
+        <i class="fas fa-database avatar-icon" aria-hidden="true"></i>
+        <div>
+          <div class="upload-title">Base de Conhecimento</div>
+          <div class="upload-sub">Documentos indexados para busca e consulta</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-sm btn-outline-secondary" (click)="loadDocuments()" [disabled]="isLoading">
+          <i class="fas fa-rotate-right me-1" [class.fa-spin]="isLoading"></i>Atualizar
+        </button>
+      </div>
+    </div>
+
+    <div class="card-body">
+
+      <!-- Mensagem de sucesso -->
+      <div class="alert alert-success py-2" *ngIf="successMessage">
+        <i class="fas fa-circle-check me-2"></i>{{ successMessage }}
+      </div>
+
+      <!-- Mensagem de erro -->
+      <div class="alert alert-danger py-2" *ngIf="errorMessage">
+        <i class="fas fa-circle-exclamation me-2"></i>{{ errorMessage }}
+      </div>
+
+      <!-- Loading -->
+      <div class="text-center py-5" *ngIf="isLoading">
+        <i class="fas fa-spinner fa-spin fa-2x text-primary"></i>
+        <p class="mt-2 text-muted">Carregando documentos...</p>
+      </div>
+
+      <!-- Sem documentos -->
+      <div class="text-center text-muted py-5" *ngIf="!isLoading && documents.length === 0">
+        <i class="fas fa-folder-open fa-2x mb-2"></i>
+        <p class="mb-0">Nenhum documento na base de conhecimento.</p>
+        <small>Faça upload de documentos na página <strong>Documentos</strong>.</small>
+      </div>
+
+      <!-- Tabela de documentos (mantida) -->
+      <div class="table-responsive" *ngIf="!isLoading && documents.length > 0">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th style="width: 40px"></th>
+              <th>Arquivo</th>
+              <th>Importado em</th>
+              <th style="width: 80px"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let doc of documents">
+
+              <!-- Ícone do tipo de arquivo -->
+              <td>
+                <i class="fas fa-lg" [class]="getFileIcon(doc.filename)"></i>
+              </td>
+
+              <!-- Nome do arquivo -->
+              <td>
+                <span class="filename">{{ doc.filename }}</span>
+              </td>
+
+              <!-- Data de importação -->
+              <td>
+                <small class="text-muted">{{ formatDate(doc.ingestedAt) }}</small>
+              </td>
+
+              <!-- Botão excluir -->
+              <td>
+                <button
+                  class="btn btn-sm btn-outline-danger"
+                  (click)="delete(doc)"
+                  [disabled]="deletingId === doc.id"
+                  title="Excluir documento">
+                  <i class="fas"
+                    [class.fa-trash]="deletingId !== doc.id"
+                    [class.fa-spinner]="deletingId === doc.id"
+                    [class.fa-spin]="deletingId === doc.id">
+                  </i>
+                </button>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- Rodapé com total -->
+    <div class="card-footer d-flex justify-content-between align-items-center" *ngIf="documents.length > 0">
+      <small class="text-muted">{{ documents.length }} documento(s) na base de conhecimento</small>
+      <div></div>
+    </div>
+
+  </div>
+</div>
