@@ -1,3 +1,9 @@
+## [1.3.0](https://github.com/CesarAVB/rag-assistant-frontend/compare/v1.2.0...v1.3.0) (2026-02-21)
+
+### Features
+
+* adicionar modal de login e proteger rotas com authGuard ([bf2dd0a](https://github.com/CesarAVB/rag-assistant-frontend/commit/bf2dd0aa59bfbede2546637f71bd20184ea0bdb1))
+
 ## [1.2.0](https://github.com/CesarAVB/rag-assistant-frontend/compare/v1.1.0...v1.2.0) (2026-02-21)
 
 ### Features
