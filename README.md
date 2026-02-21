@@ -1,6 +1,12 @@
 # 💬 RAG Sales Assistant — Frontend
 
-Microservico de assistente de vendas com IA generativa, RAG e memoria de conversas para suporte ao cliente via chat.
+[![Angular](https://img.shields.io/badge/Angular-19-red.svg)](https://angular.io/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.x-purple.svg)](https://getbootstrap.com/)
+[![Font Awesome](https://img.shields.io/badge/Font%20Awesome-6.x-228BE6.svg)](https://fontawesome.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+> Interface web do assistente de vendas com IA generativa. Permite conversas com memoria de sessao e upload de documentos para a base de conhecimento RAG.
 
 ---
 
@@ -106,7 +112,7 @@ Ao acessar qualquer rota protegida sem estar autenticado, um modal de login e ex
 
 **Fluxo:**
 ```
-Usuario acessa /chat ou /upload ou /documents
+Usuario acessa /chat, /upload ou /documents
   → AuthGuard verifica se ha token no sessionStorage
   → Se nao houver, AuthModalService emite evento para abrir o modal
   → Usuario digita a senha no modal
@@ -169,11 +175,18 @@ Usuario digita mensagem
 
 ---
 
-## 🌐 Deploy
+## 🚀 Melhorias Futuras
 
-- **URL do Frontend:** https://rag.cesaravb.com.br
-- **Plataforma:** Coolify
-- **Projeto:** REDELOGNET - RAG ASSISTANT
+- **Pagina de monitoramento de sessoes** — exibir as conversas ativas com historico de mensagens, timestamps e consumo estimado de tokens por sessao (requer integracao com Redis no backend)
+- **Streaming de respostas** — exibir a resposta do assistente palavra por palavra em tempo real usando Server-Sent Events, tornando a experiencia mais fluida e natural
+- **Tema escuro** — adicionar suporte a dark mode com alternancia pelo header, salvando a preferencia no localStorage
+- **Historico de conversas** — permitir que o usuario retome conversas anteriores com listagem e busca por data ou palavra-chave
+- **Exportar conversa** — botao para baixar o historico da conversa em PDF ou TXT diretamente pela interface
+- **Feedback nas respostas** — botoes de polegar para cima/baixo em cada resposta para coleta de feedback sobre a qualidade do assistente
+- **Preview de documentos** — exibir uma previa do conteudo do documento antes do upload, com informacoes como numero de paginas e tamanho
+- **Notificacoes em tempo real** — alertas via WebSocket quando um novo documento for processado e disponibilizado na base de conhecimento
+- **Responsividade mobile** — otimizar a interface do chat e upload para dispositivos moveis com layout adaptativo
+- **Testes automatizados** — adicionar testes unitarios com Jest e testes end-to-end com Cypress para os fluxos principais de chat e upload
 
 ---
 
