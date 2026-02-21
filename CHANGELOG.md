@@ -1,3 +1,9 @@
+## [1.6.0](https://github.com/CesarAVB/rag-assistant-frontend/compare/v1.5.2...v1.6.0) (2026-02-21)
+
+### Features
+
+* adicionar interceptor de autenticação para gerenciar tokens nas requisições HTTP ([f358223](https://github.com/CesarAVB/rag-assistant-frontend/commit/f358223d2c168a78755d5aaa73b22898acb25dfe))
+
 ## [1.5.2](https://github.com/CesarAVB/rag-assistant-frontend/compare/v1.5.1...v1.5.2) (2026-02-21)
 
 ### Bug Fixes
