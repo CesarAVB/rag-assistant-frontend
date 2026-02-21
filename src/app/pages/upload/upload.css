@@ -1,0 +1,73 @@
+.upload-wrapper {
+  max-width: 800px;
+}
+
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: #fff;
+  border-bottom: 1px solid #dee2e6;
+  padding: 12px 16px;
+}
+
+/* Área de drag and drop */
+.drop-zone {
+  border: 2px dashed #0d6efd;
+  border-radius: 12px;
+  padding: 48px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  background-color: #f8f9ff;
+}
+
+.drop-zone:hover,
+.drop-zone.dragging {
+  background-color: #e8f0fe;
+  border-color: #0a58ca;
+}
+
+/* Lista de arquivos */
+.file-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.file-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.file-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400px;
+}
+
+.status-message {
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.card-footer {
+  background-color: #fff;
+  border-top: 1px solid #dee2e6;
+  padding: 12px 16px;
+}

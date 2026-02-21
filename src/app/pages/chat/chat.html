@@ -1,0 +1,65 @@
+<div class="chat-wrapper container py-4">
+  <div class="chat-card card shadow-sm">
+
+    <!-- Cabeçalho -->
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <span>
+        <i class="fas fa-robot me-2 text-primary"></i>
+        <strong>Assistente de Vendas</strong>
+      </span>
+      <button class="btn btn-sm btn-outline-secondary" (click)="clearChat()" title="Nova conversa">
+        <i class="fas fa-rotate-right me-1"></i>Nova conversa
+      </button>
+    </div>
+
+    <!-- Área de mensagens -->
+    <div class="card-body messages-container" #messagesContainer>
+      <div *ngFor="let msg of messages" class="message-wrapper" [class.user]="msg.role === 'user'">
+        <div class="message-bubble" [class.user-bubble]="msg.role === 'user'" [class.assistant-bubble]="msg.role === 'assistant'">
+          
+          <!-- Ícone -->
+          <div class="message-icon">
+            <i class="fas" [class.fa-user]="msg.role === 'user'" [class.fa-robot]="msg.role === 'assistant'"></i>
+          </div>
+
+          <!-- Conteúdo -->
+          <div class="message-content">
+            <p class="mb-0">{{ msg.content }}</p>
+            <small class="message-time">{{ msg.timestamp | date:'HH:mm' }}</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Indicador de digitação -->
+      <div class="message-wrapper" *ngIf="isLoading">
+        <div class="message-bubble assistant-bubble">
+          <div class="message-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="typing-indicator">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input -->
+    <div class="card-footer">
+      <div class="input-group">
+        <textarea
+          class="form-control"
+          rows="1"
+          placeholder="Digite sua mensagem..."
+          [(ngModel)]="userInput"
+          (keydown)="onKeyDown($event)"
+          [disabled]="isLoading">
+        </textarea>
+        <button class="btn btn-primary" (click)="sendMessage()" [disabled]="isLoading || !userInput.trim()">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+      <small class="text-muted mt-1 d-block">Enter para enviar · Shift+Enter para nova linha</small>
+    </div>
+
+  </div>
+</div>

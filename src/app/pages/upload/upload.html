@@ -1,0 +1,94 @@
+<div class="upload-wrapper container py-4">
+  <div class="card shadow-sm">
+
+    <!-- Cabeçalho -->
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <span>
+        <i class="fas fa-database me-2 text-primary"></i>
+        <strong>Base de Conhecimento</strong>
+      </span>
+      <small class="text-muted">Formatos aceitos: PDF, DOC, DOCX, XLS, XLSX, TXT</small>
+    </div>
+
+    <div class="card-body">
+
+      <!-- Área de Drag and Drop -->
+      <div
+        class="drop-zone"
+        [class.dragging]="isDragging"
+        (dragover)="onDragOver($event)"
+        (dragleave)="onDragLeave()"
+        (drop)="onDrop($event)"
+        (click)="fileInput.click()">
+        <i class="fas fa-cloud-upload-alt fa-3x mb-3 text-primary"></i>
+        <p class="mb-1"><strong>Arraste e solte os arquivos aqui</strong></p>
+        <p class="text-muted mb-0">ou clique para selecionar</p>
+        <input
+          #fileInput
+          type="file"
+          [accept]="acceptedFormats"
+          multiple
+          hidden
+          (change)="onFileSelected($event)">
+      </div>
+
+      <!-- Lista de arquivos -->
+      <div class="file-list mt-4" *ngIf="files.length > 0">
+        <div class="file-item" *ngFor="let uploadFile of files; let i = index">
+
+          <!-- Ícone do tipo de arquivo -->
+          <i class="fas fa-lg me-3" [class]="getFileIcon(uploadFile.file.name)"></i>
+
+          <!-- Nome e tamanho -->
+          <div class="file-info">
+            <span class="file-name">{{ uploadFile.file.name }}</span>
+            <small class="text-muted">{{ formatSize(uploadFile.file.size) }}</small>
+          </div>
+
+          <!-- Mensagem de status -->
+          <small class="status-message text-muted me-3">{{ uploadFile.message }}</small>
+
+          <!-- Ícone de status -->
+          <i class="fas me-3" [class]="getStatusIcon(uploadFile.status)"></i>
+
+          <!-- Botão remover (apenas para pending) -->
+          <button
+            class="btn btn-sm btn-outline-danger"
+            *ngIf="uploadFile.status === 'pending'"
+            (click)="removeFile(i)"
+            title="Remover">
+            <i class="fas fa-times"></i>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Sem arquivos -->
+      <div class="text-center text-muted py-3" *ngIf="files.length === 0">
+        <i class="fas fa-folder-open fa-2x mb-2"></i>
+        <p class="mb-0">Nenhum arquivo selecionado</p>
+      </div>
+
+    </div>
+
+    <!-- Rodapé com ações -->
+    <div class="card-footer d-flex justify-content-between align-items-center" *ngIf="files.length > 0">
+      <small class="text-muted">{{ files.length }} arquivo(s) na lista</small>
+      <div class="d-flex gap-2">
+        <button
+          class="btn btn-outline-secondary btn-sm"
+          *ngIf="hasSuccess"
+          (click)="clearSuccess()">
+          <i class="fas fa-broom me-1"></i>Limpar enviados
+        </button>
+        <button
+          class="btn btn-primary btn-sm"
+          [disabled]="!hasPending"
+          (click)="uploadAll()">
+          <i class="fas fa-upload me-1"></i>Enviar documentos
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
