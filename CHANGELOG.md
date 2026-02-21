@@ -1,3 +1,9 @@
+## [1.5.2](https://github.com/CesarAVB/rag-assistant-frontend/compare/v1.5.1...v1.5.2) (2026-02-21)
+
+### Bug Fixes
+
+* atualizar limite de tamanho para aviso de orçamento e corrigir URL da API de produção ([ea77475](https://github.com/CesarAVB/rag-assistant-frontend/commit/ea77475f7c9fce9a376838d91930fb58284ff021))
+
 ## [1.5.1](https://github.com/CesarAVB/rag-assistant-frontend/compare/v1.5.0...v1.5.1) (2026-02-21)
 
 ### Bug Fixes
