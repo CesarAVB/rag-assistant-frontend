@@ -38,19 +38,31 @@
           autofocus>
       </div>
 
-      <!-- Botão -->
-      <button
-        class="btn btn-submit w-100 mt-3"
-        (click)="login()"
-        [disabled]="isLoading || !password.trim()"
-        aria-disabled="{{ isLoading || !password.trim() }}">
-        <span *ngIf="isLoading">
-          <i class="fas fa-spinner fa-spin me-2"></i>Verificando...
-        </span>
-        <span *ngIf="!isLoading">
-          <i class="fas fa-right-to-bracket me-2"></i>Entrar
-        </span>
-      </button>
+      <!-- Ações: Cancelar + Entrar -->
+      <div class="modal-actions mt-3">
+        <button
+          type="button"
+          class="btn btn-cancel"
+          (click)="cancel()"
+          [disabled]="isLoading"
+          aria-label="Cancelar e voltar para a dashboard">
+          Cancelar
+        </button>
+
+        <button
+          type="button"
+          class="btn btn-submit"
+          (click)="login()"
+          [disabled]="isLoading || !password.trim()"
+          aria-disabled="{{ isLoading || !password.trim() }}">
+          <span *ngIf="isLoading">
+            <i class="fas fa-spinner fa-spin me-2"></i>Verificando...
+          </span>
+          <span *ngIf="!isLoading">
+            <i class="fas fa-right-to-bracket me-2"></i>Entrar
+          </span>
+        </button>
+      </div>
 
     </div>
 

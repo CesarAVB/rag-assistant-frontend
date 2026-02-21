@@ -4,8 +4,12 @@ import { authGuard } from './services/auth-guard';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'chat',
+    redirectTo: 'dashboard',
     pathMatch: 'full'
+  },
+  {
+    path: 'dashboard',
+    loadComponent: () => import('./pages/dashboard').then(m => m.DashboardComponent)
   },
   {
     path: 'chat',

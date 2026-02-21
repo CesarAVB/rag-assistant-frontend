@@ -61,4 +61,15 @@ export class LoginModalComponent {
       this.login();
     }
   }
+
+  // ========================================
+  // cancel - Fecha o modal e redireciona para dashboard
+  // ========================================
+  cancel(): void {
+    if (this.isLoading) return;
+    this.errorMessage = '';
+    this.password = '';
+    this.closed.emit();
+    this.router.navigate(['/dashboard']);
+  }
 }

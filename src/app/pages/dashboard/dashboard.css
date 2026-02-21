@@ -1,0 +1,82 @@
+
+.dashboard-card { border-radius: 14px; overflow: hidden; background: linear-gradient(180deg,#ffffff,#f6fbff); box-shadow: 0 10px 30px rgba(16,24,40,0.06); padding:28px; color:#04263b; max-width:1100px; margin:0 auto }
+.dashboard-header h4 { font-weight:800; margin:0; font-size:1.5rem; color: #04263b; position:relative; padding-bottom:6px }
+.dashboard-header h4::after { content:''; position:absolute; left:0; bottom:0; height:3px; width:48px; background:#2563eb; border-radius:2px }
+.header-sub { font-size:0.92rem; color: #25607a }
+
+.header-badge { background: linear-gradient(90deg,#1f4fd9,#254aa6); color:#ffffff; width:56px; height:56px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.2rem; box-shadow: 0 8px 18px rgba(37,99,235,0.08) }
+.header-badge i { font-size:18px; line-height:1 }
+.header-actions .btn { font-size:0.88rem }
+
+/* Dashboard header panel (theme-like) */
+.dashboard-header { background: linear-gradient(90deg,#eef6ff 0%, #f6fbff 60%); padding:18px 20px; border-radius:10px; box-shadow: 0 8px 22px rgba(37,99,235,0.06); margin: -28px -28px 20px -28px; border: 1px solid rgba(37,99,235,0.06) }
+.dashboard-header .header-sub { margin-top:4px; color: #1f5d75 }
+
+/* custom small buttons for header */
+.btn-outline-small { background: transparent; border:1px solid rgba(4,38,59,0.08); color:#0b2f40; padding:6px 12px; border-radius:10px }
+.btn-solid-small { background: linear-gradient(90deg,#1f4fd9,#2563eb); color: #fff; padding:6px 12px; border-radius:10px; border:none }
+
+.stats-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap:16px; margin-top:10px }
+.stat-card { background: linear-gradient(180deg,#0b2b3a,#071726); border-radius:14px; padding:16px; box-shadow:0 10px 28px rgba(2,6,23,0.18); transition: transform .16s ease, box-shadow .16s ease }
+.stat-card:hover { transform: translateY(-6px); box-shadow:0 20px 46px rgba(3,10,40,0.28) }
+.stat-top { display:flex; align-items:center; gap:12px }
+.stat-icon { width:44px; height:44px; display:flex; align-items:center; justify-content:center; border-radius:10px; background: linear-gradient(90deg,#0ea5e9,#3b82f6); color:#fff; font-size:1.15rem }
+.stat-value { font-size:1.9rem; font-weight:800; color:#cfe9ff }
+.stat-label { font-size:0.92rem; color:#c1d9ef; margin-top:8px }
+
+/* Document actions */
+.stat-actions { display:flex; justify-content:flex-end }
+.btn-view-docs { padding:8px 12px; border-radius:10px; background: linear-gradient(90deg,#60a5fa,#38bdf8); color:#04263b; text-decoration:none; font-weight:700 }
+.btn-view-docs:hover { filter:brightness(.98) }
+
+.card-recent { background:#fff; border-radius:10px; box-shadow:0 8px 20px rgba(2,6,23,0.04) }
+.recent-list { list-style:none; padding:0; margin:0; color:#475569 }
+.recent-list li { padding:8px 0; border-bottom:1px solid rgba(15,23,42,0.03) }
+.recent-list li:last-child { border-bottom: none }
+
+/* page background */
+.dash-background { position:absolute; inset:0; background: linear-gradient(180deg,#f8fafc 0%, #eef6ff 100%); filter: none; opacity:1; z-index:-2 }
+.dashboard { position:relative; min-height: calc(100vh - 160px); padding:36px 16px; background: transparent }
+
+/* Features */
+.card-features { background: linear-gradient(180deg,#326a82,#234d64); border-radius:12px; box-shadow:0 10px 24px rgba(2,6,23,0.12); padding:20px }
+.features-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:18px }
+.feature-card { position:relative; overflow:hidden; background: linear-gradient(180deg,#ffffff,#f3f9ff); border-radius:12px; padding:18px; border: 1px solid rgba(13,60,100,0.06); box-shadow:0 8px 22px rgba(16,24,40,0.06); transition: transform .18s cubic-bezier(.2,.9,.3,1), box-shadow .18s cubic-bezier(.2,.9,.3,1), border-color .18s }
+.feature-card::before { content: ''; position:absolute; left:0; top:0; height:100%; width:6px; background: linear-gradient(180deg,#60a5fa,#1e3aa8); transform:translateX(-2px); opacity:0.95 }
+.feature-card:hover { transform: translateY(-8px); box-shadow:0 26px 54px rgba(3,10,40,0.20); border-color: rgba(37,99,235,0.14) }
+.feature-card:focus-within { box-shadow:0 22px 48px rgba(3,10,40,0.26); border-color: rgba(37,99,235,0.14) }
+.feature-top { display:flex; gap:12px }
+.feature-icon { width:52px; height:52px; min-width:52px; border-radius:12px; display:flex; align-items:center; justify-content:center; background: linear-gradient(90deg,#2563eb,#60a5fa); color:#ffffff; box-shadow: 0 6px 16px rgba(37,99,235,0.08); padding:0 }
+.feature-icon i { color:#fff; font-size:18px; line-height:1; width:18px; height:18px; display:inline-flex; align-items:center; justify-content:center }
+.feature-title { font-weight:800; color:#04263b; font-size:1.05rem }
+.feature-body { color: #0b2f40 }
+.feature-desc { font-size:0.95rem; font-weight:500; color:#23454f; margin-top:8px; opacity:1; line-height:1.45 }
+.feature-actions { display:flex; justify-content:flex-end }
+.btn-feature-link { padding:8px 12px; border-radius:10px; background: linear-gradient(90deg,#1e40af,#2563eb); color:#e6f8ff; font-weight:700; text-decoration:none; box-shadow: 0 6px 18px rgba(37,99,235,0.06); transition: transform .12s, box-shadow .12s }
+.btn-feature-link:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(37,99,235,0.16) }
+.btn-feature-link:focus { outline: 3px solid rgba(37,99,235,0.16); outline-offset: 2px }
+
+/* focus styles for keyboard users */
+.feature-card:focus { box-shadow:0 28px 60px rgba(3,10,40,0.28); transform: translateY(-6px); border-color: rgba(96,165,250,0.22); outline: none }
+.feature-card:focus-visible { outline: 3px solid rgba(96,165,250,0.14); outline-offset: 4px }
+.header-actions .btn:focus-visible { outline: 3px solid rgba(96,165,250,0.12); outline-offset: 2px }
+
+@media (max-width:991px) {
+  .features-grid { grid-template-columns: repeat(2,1fr); gap:16px }
+}
+@media (max-width:575px) {
+  .dashboard-card { padding:16px }
+}
+
+@media (max-width:575px) {
+  .features-grid { grid-template-columns: 1fr }
+}
+
+@media (max-width:991px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr) }
+}
+
+@media (max-width:575px) {
+  .stats-grid { grid-template-columns: 1fr }
+  .header-badge { width:40px; height:40px }
+}

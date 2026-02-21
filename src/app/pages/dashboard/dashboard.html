@@ -1,0 +1,42 @@
+<div class="dashboard container py-4">
+  <div class="dash-background"></div>
+  <div class="dashboard-card p-3">
+      <div class="dashboard-header mb-3">
+      <div class="d-flex align-items-center gap-3">
+        <div class="header-badge" aria-hidden="true">
+          <i class="fas fa-tachometer-alt"></i>
+        </div>
+        <div>
+          <h4 class="mb-0 header-title">Dashboard</h4>
+          <div class="header-sub">Visão geral e funcionalidades</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- estatísticas removidas: não há métricas disponíveis no sistema -->
+
+    <div class="mt-4">
+      <div class="features-section mb-3">
+        <h6 class="mb-3">Principais features</h6>
+          <div class="features-grid">
+          <div class="feature-card" *ngFor="let f of features" tabindex="0" role="article" [attr.aria-label]="'Feature: ' + f.title">
+            <div class="feature-top d-flex align-items-start gap-3">
+              <div class="feature-icon">
+                <i class="fas" [ngClass]="['fa-fw', 'fa-' + f.icon]" aria-hidden="true"></i>
+              </div>
+              <div class="feature-body">
+                <div class="feature-title">{{ f.title }}</div>
+                <div class="feature-desc">{{ f.desc }}</div>
+              </div>
+            </div>
+            <div class="feature-actions mt-3">
+              <a *ngIf="f.route" [routerLink]="f.route" class="btn btn-feature-link" [attr.aria-label]="'Abrir ' + f.title">Abrir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- seção de conversas removida (não disponível no sistema) -->
+    </div>
+  </div>
+</div>
