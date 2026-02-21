@@ -1,0 +1,99 @@
+/* Overlay escuro que cobre toda a tela */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(2, 6, 23, 0.48); /* slightly less opaque */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.18s ease;
+}
+
+/* Caixa do modal */
+.modal-box {
+  background: #ffffff; /* light modal body */
+  border-radius: 14px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 40px rgba(2,6,23,0.18);
+  overflow: hidden;
+  animation: slideUp 0.22s cubic-bezier(.2,.9,.3,1);
+  color: #04263b; /* dark text for readability */
+}
+
+.modal-header-custom {
+  background: linear-gradient(90deg, rgba(13,27,45,0.98), rgba(2,6,23,0.98));
+  color: #e6eef8;
+  padding: 18px 20px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.header-icon { background: rgba(125,211,252,0.06); padding:10px; border-radius:8px; display:flex; align-items:center; justify-content:center }
+.header-icon .fa-robot { color: #7dd3fc; font-size:1.25rem }
+.header-text h5 { margin:0; font-weight:700; color: #e6eef8 }
+.header-text .hint { font-size:0.86rem; color:#9aa6b2 }
+
+
+.modal-body-custom { padding: 20px; background: #ffffff; }
+
+.error-box { background: rgba(220,38,38,0.08); color: #6b1414; padding:8px 10px; border-radius:8px; margin-bottom:12px; display:flex; align-items:center }
+
+/* Make input area brighter for readability */
+.input-password .input-group-text {
+  background: #f3fbff;
+  border: 1px solid rgba(2,6,23,0.06);
+  color: #04263b;
+}
+.input-password .form-control {
+  background: #f7fcff; /* light input for high contrast */
+  border: 1px solid rgba(2,6,23,0.06);
+  color: #04263b; /* dark text for readability */
+  border-radius:8px;
+}
+.input-password .form-control:focus {
+  box-shadow: 0 10px 28px rgba(56,189,248,0.08);
+  border-color: rgba(56,189,248,0.2);
+  outline: none;
+}
+
+/* placeholder color */
+.input-password .form-control::placeholder { color: rgba(4,38,59,0.45); }
+.input-password .form-control:-ms-input-placeholder { color: rgba(4,38,59,0.45); }
+.input-password .form-control::-ms-input-placeholder { color: rgba(4,38,59,0.45); }
+
+.btn-submit { display:inline-flex; align-items:center; justify-content:center; padding:10px 14px; border-radius:10px; border:none; font-weight:700; background: linear-gradient(90deg,#7dd3fc,#38bdf8); color:#04263b }
+.btn-submit:disabled { opacity:0.6 }
+
+.modal-footer-custom {
+  padding:12px 20px;
+  text-align:center;
+  background: transparent;
+  border-top: 1px solid rgba(2,6,23,0.06); /* subtle divider on light background */
+  color:#64748b;
+}
+
+/* Footer note layout and separator */
+.footer-note { display:inline-flex; align-items:center; gap:8px; color: #64748b; font-size:0.9rem }
+.footer-note .footer-text { display:inline-block }
+.footer-note .footer-separator {
+  width:6px;
+  height:6px;
+  background: #cbd5e1;
+  border-radius:50%;
+  display:inline-block;
+  margin:0 6px;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+/* small screens */
+@media (max-width:420px) {
+  .modal-box { max-width: 92%; }
+  .modal-header-custom { padding: 14px }
+  .modal-body-custom { padding: 14px }
+}

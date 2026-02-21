@@ -1,0 +1,68 @@
+<!-- Overlay escuro por trás do modal -->
+<div class="modal-overlay" role="dialog" aria-modal="true" aria-label="Login">
+  <div class="modal-box">
+
+    <!-- Cabeçalho -->
+    <div class="modal-header-custom">
+      <div class="header-icon">
+        <i class="fas fa-robot" aria-hidden="true"></i>
+      </div>
+      <div class="header-text">
+        <h5 class="mb-0">Assistente de Vendas</h5>
+        <small class="hint">Digite a senha para acessar</small>
+      </div>
+    </div>
+
+    <!-- Corpo -->
+    <div class="modal-body-custom">
+
+      <!-- Erro -->
+      <div class="error-box" *ngIf="errorMessage" role="alert">
+        <i class="fas fa-circle-exclamation me-2"></i>
+        <span>{{ errorMessage }}</span>
+      </div>
+
+      <!-- Input de senha -->
+      <div class="input-group input-password">
+        <span class="input-group-text">
+          <i class="fas fa-lock" aria-hidden="true"></i>
+        </span>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Senha de acesso"
+          [(ngModel)]="password"
+          (keydown)="onKeyDown($event)"
+          [disabled]="isLoading"
+          aria-label="Senha de acesso"
+          autofocus>
+      </div>
+
+      <!-- Botão -->
+      <button
+        class="btn btn-submit w-100 mt-3"
+        (click)="login()"
+        [disabled]="isLoading || !password.trim()"
+        aria-disabled="{{ isLoading || !password.trim() }}">
+        <span *ngIf="isLoading">
+          <i class="fas fa-spinner fa-spin me-2"></i>Verificando...
+        </span>
+        <span *ngIf="!isLoading">
+          <i class="fas fa-right-to-bracket me-2"></i>Entrar
+        </span>
+      </button>
+
+    </div>
+
+    <!-- Rodapé -->
+    <div class="modal-footer-custom">
+      <small class="footer-note">
+        <i class="fas fa-shield-halved me-1" aria-hidden="true"></i>
+        <span class="footer-text">Acesso restrito</span>
+        <span class="footer-separator" aria-hidden="true"></span>
+        <span class="footer-text">Portfólio Pessoal</span>
+      </small>
+    </div>
+
+  </div>
+</div>

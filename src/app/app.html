@@ -1,5 +1,13 @@
 <app-header />
+
 <main class="main-content">
   <router-outlet />
 </main>
+
 <app-footer />
+
+<!-- Modal de login — renderizado condicionalmente por cima de tudo -->
+<app-login-modal
+  *ngIf="showLoginModal"
+  (closed)="onModalClosed()">
+</app-login-modal>
