@@ -1,3 +1,9 @@
+## [1.5.1](https://github.com/CesarAVB/rag-assistant-frontend/compare/v1.5.0...v1.5.1) (2026-02-21)
+
+### Bug Fixes
+
+* aumentar limites de tamanho para estilos de componentes ([c77ac2a](https://github.com/CesarAVB/rag-assistant-frontend/commit/c77ac2a3b75f4b7c92df34a7dc2d4ae5577d2606))
+
 ## [1.5.0](https://github.com/CesarAVB/rag-assistant-frontend/compare/v1.4.0...v1.5.0) (2026-02-21)
 
 ### Features
