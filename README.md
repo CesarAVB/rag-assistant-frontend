@@ -8,6 +8,8 @@
 
 > Interface web do assistente de vendas com IA generativa. Permite conversas com memoria de sessao e upload de documentos para a base de conhecimento RAG.
 
+<img width="1918" height="866" alt="image" src="https://github.com/user-attachments/assets/2b599602-806f-4dae-9e13-27646e9dcd32" />
+
 ---
 
 ## 🧱 Tecnologias
