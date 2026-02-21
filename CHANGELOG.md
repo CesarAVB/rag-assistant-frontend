@@ -1,3 +1,9 @@
+## [1.7.1](https://github.com/CesarAVB/rag-assistant-frontend/compare/v1.7.0...v1.7.1) (2026-02-21)
+
+### Bug Fixes
+
+* corrigir título da página para "Assistente de IA RAG" ([ac3d2f8](https://github.com/CesarAVB/rag-assistant-frontend/commit/ac3d2f80fb75d2a4e1a0cee45a9f6518bee99b7b))
+
 ## [1.7.0](https://github.com/CesarAVB/rag-assistant-frontend/compare/v1.6.0...v1.7.0) (2026-02-21)
 
 ### Features
