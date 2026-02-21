@@ -8,7 +8,7 @@
 
 > Interface web do assistente de vendas com IA generativa. Permite conversas com memoria de sessao e upload de documentos para a base de conhecimento RAG.
 
-<img width="1919" height="864" alt="image" src="https://github.com/user-attachments/assets/07862d82-a96e-4b44-9b94-7279368c7a82" />
+<img width="1919" height="869" alt="image" src="https://github.com/user-attachments/assets/084377f5-45b7-42e2-984e-d716bf6cbfac" />
 
 ---
 
@@ -130,6 +130,8 @@ O token some automaticamente ao fechar o navegador (sessionStorage).
 
 ### 💬 Chat (`/chat`)
 
+<img width="1919" height="864" alt="image" src="https://github.com/user-attachments/assets/07862d82-a96e-4b44-9b94-7279368c7a82" />
+
 - Interface de conversa com o assistente de vendas
 - Memoria de conversa por sessao (UUID gerado automaticamente)
 - Indicador de digitacao animado
@@ -138,12 +140,16 @@ O token some automaticamente ao fechar o navegador (sessionStorage).
 
 ### 📂 Upload (`/upload`)
 
+<img width="1919" height="868" alt="image" src="https://github.com/user-attachments/assets/53b2acfe-b369-4fcf-9220-060428725242" />
+
 - Area de drag and drop para envio de documentos
 - Suporte a PDF, DOC, DOCX, XLS, XLSX e TXT
 - Status individual por arquivo (pendente, enviando, sucesso, erro)
 - Envio em lote de multiplos arquivos
 
 ### 🗄️ Base de Conhecimento (`/documents`)
+
+<img width="1919" height="869" alt="image" src="https://github.com/user-attachments/assets/3a627e6c-ee93-4e92-9b70-d8570c60e348" />
 
 - Listagem de todos os documentos importados
 - Icone por tipo de arquivo
