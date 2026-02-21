@@ -1,4 +1,4 @@
-# 💬 RAG Sales Assistant — Frontend
+# 💬 Assistente de IA RAG — Frontend
 
 [![Angular](https://img.shields.io/badge/Angular-19-red.svg)](https://angular.io/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
