@@ -1,3 +1,9 @@
+## [1.7.0](https://github.com/CesarAVB/rag-assistant-frontend/compare/v1.6.0...v1.7.0) (2026-02-21)
+
+### Features
+
+* adicionar foco automático no campo de entrada após enviar mensagem ([c672063](https://github.com/CesarAVB/rag-assistant-frontend/commit/c6720636f54ea452a128916b7997057f54f4dd1b))
+
 ## [1.6.0](https://github.com/CesarAVB/rag-assistant-frontend/compare/v1.5.2...v1.6.0) (2026-02-21)
 
 ### Features
