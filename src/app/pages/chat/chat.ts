@@ -16,7 +16,7 @@ interface Message {
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './chat.html',
-  styleUrl: './chat.css'
+  styleUrls: ['./chat.css']
 })
 export class ChatComponent implements OnInit {
 
@@ -31,6 +31,16 @@ export class ChatComponent implements OnInit {
   conversationId: string = '';
 
   constructor(private chatService: ChatService) {}
+
+  // Handler para arquivo selecionado (placeholder)
+  onFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (!input.files || input.files.length === 0) return;
+    const file = input.files[0];
+    // comportamento de upload pode ser implementado no ChatService
+    this.messages.push({ role: 'user', content: `📎 Enviado: ${file.name}`, timestamp: new Date() });
+    this.scrollToBottom();
+  }
 
   ngOnInit(): void {
     // Gera o ID da sessão ao abrir a página

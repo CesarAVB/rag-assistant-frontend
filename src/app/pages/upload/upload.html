@@ -1,13 +1,18 @@
 <div class="upload-wrapper container py-4">
-  <div class="card shadow-sm">
+  <div class="upload-card card shadow-sm">
 
     <!-- Cabeçalho -->
     <div class="card-header d-flex justify-content-between align-items-center">
-      <span>
-        <i class="fas fa-database me-2 text-primary"></i>
-        <strong>Base de Conhecimento</strong>
-      </span>
-      <small class="text-muted">Formatos aceitos: PDF, DOC, DOCX, XLS, XLSX, TXT</small>
+      <div class="header-left">
+        <i class="fas fa-database avatar-icon" aria-hidden="true"></i>
+        <div>
+          <div class="upload-title">Base de Conhecimento</div>
+          <div class="upload-sub">Formatos aceitos: PDF, DOC, DOCX, XLS, XLSX, TXT</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <!-- espaço reservado para ações futuras -->
+      </div>
     </div>
 
     <div class="card-body">
@@ -18,18 +23,22 @@
         [class.dragging]="isDragging"
         (dragover)="onDragOver($event)"
         (dragleave)="onDragLeave()"
-        (drop)="onDrop($event)"
-        (click)="fileInput.click()">
-        <i class="fas fa-cloud-upload-alt fa-3x mb-3 text-primary"></i>
+        (drop)="onDrop($event)">
+        <i class="fas fa-cloud-upload-alt fa-3x mb-3 upload-icon" aria-hidden="true"></i>
         <p class="mb-1"><strong>Arraste e solte os arquivos aqui</strong></p>
-        <p class="text-muted mb-0">ou clique para selecionar</p>
-        <input
-          #fileInput
-          type="file"
-          [accept]="acceptedFormats"
-          multiple
-          hidden
-          (change)="onFileSelected($event)">
+        <p class="text-muted mb-0">ou clique no botão abaixo para selecionar</p>
+        <div class="mt-3">
+          <label class="btn btn-outline-secondary btn-sm mb-0">
+            Selecionar arquivos
+            <input
+              #fileInput
+              type="file"
+              [accept]="acceptedFormats"
+              multiple
+              hidden
+              (change)="onFileSelected($event)">
+          </label>
+        </div>
       </div>
 
       <!-- Lista de arquivos -->
@@ -37,7 +46,9 @@
         <div class="file-item" *ngFor="let uploadFile of files; let i = index">
 
           <!-- Ícone do tipo de arquivo -->
-          <i class="fas fa-lg me-3" [class]="getFileIcon(uploadFile.file.name)"></i>
+          <div class="file-left">
+            <i class="fas fa-lg" [class]="getFileIcon(uploadFile.file.name)"></i>
+          </div>
 
           <!-- Nome e tamanho -->
           <div class="file-info">
@@ -45,20 +56,18 @@
             <small class="text-muted">{{ formatSize(uploadFile.file.size) }}</small>
           </div>
 
-          <!-- Mensagem de status -->
-          <small class="status-message text-muted me-3">{{ uploadFile.message }}</small>
-
-          <!-- Ícone de status -->
-          <i class="fas me-3" [class]="getStatusIcon(uploadFile.status)"></i>
-
-          <!-- Botão remover (apenas para pending) -->
-          <button
-            class="btn btn-sm btn-outline-danger"
-            *ngIf="uploadFile.status === 'pending'"
-            (click)="removeFile(i)"
-            title="Remover">
-            <i class="fas fa-times"></i>
-          </button>
+          <!-- Mensagem de status e ações -->
+          <div class="file-actions d-flex align-items-center gap-3">
+            <small class="status-message text-muted">{{ uploadFile.message }}</small>
+            <i class="fas" [class]="getStatusIcon(uploadFile.status)"></i>
+            <button
+              class="btn btn-sm btn-outline-danger"
+              *ngIf="uploadFile.status === 'pending'"
+              (click)="removeFile(i)"
+              title="Remover">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
 
         </div>
       </div>

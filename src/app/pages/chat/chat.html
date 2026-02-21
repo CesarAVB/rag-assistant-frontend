@@ -3,36 +3,44 @@
 
     <!-- Cabeçalho -->
     <div class="card-header d-flex justify-content-between align-items-center">
-      <span>
-        <i class="fas fa-robot me-2 text-primary"></i>
-        <strong>Assistente de Vendas</strong>
-      </span>
-      <button class="btn btn-sm btn-outline-secondary" (click)="clearChat()" title="Nova conversa">
-        <i class="fas fa-rotate-right me-1"></i>Nova conversa
-      </button>
+      <div class="header-left">
+        <i class="fas fa-robot avatar-icon" aria-hidden="true"></i>
+        <div>
+          <div class="chat-title">Assistente de Vendas</div>
+          <div class="chat-sub">Online · Resposta rápida</div>
+        </div>
+      </div>
+
+      <div class="header-actions d-flex align-items-center gap-2">
+        <button class="btn btn-sm btn-outline-secondary" (click)="clearChat()" title="Nova conversa">
+          <i class="fas fa-rotate-right me-1"></i>Nova Conversa
+        </button>
+      </div>
     </div>
 
     <!-- Área de mensagens -->
     <div class="card-body messages-container" #messagesContainer>
       <div *ngFor="let msg of messages" class="message-wrapper" [class.user]="msg.role === 'user'">
         <div class="message-bubble" [class.user-bubble]="msg.role === 'user'" [class.assistant-bubble]="msg.role === 'assistant'">
-          
+
           <!-- Ícone -->
-          <div class="message-icon">
+          <div class="message-icon" [attr.aria-hidden]="true">
             <i class="fas" [class.fa-user]="msg.role === 'user'" [class.fa-robot]="msg.role === 'assistant'"></i>
           </div>
 
           <!-- Conteúdo -->
           <div class="message-content">
-            <p class="mb-0">{{ msg.content }}</p>
-            <small class="message-time">{{ msg.timestamp | date:'HH:mm' }}</small>
+            <div class="message-text">{{ msg.content }}</div>
+            <div class="message-meta">
+              <small class="message-time">{{ msg.timestamp | date:'HH:mm' }}</small>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Indicador de digitação -->
       <div class="message-wrapper" *ngIf="isLoading">
-        <div class="message-bubble assistant-bubble">
+        <div class="message-bubble assistant-bubble typing-bubble">
           <div class="message-icon">
             <i class="fas fa-robot"></i>
           </div>
@@ -44,19 +52,25 @@
     </div>
 
     <!-- Input -->
-    <div class="card-footer">
-      <div class="input-group">
+    <div class="card-footer input-area">
+      <div class="input-row d-flex gap-2 align-items-end">
         <textarea
-          class="form-control"
+          class="form-control chat-input"
           rows="1"
           placeholder="Digite sua mensagem..."
           [(ngModel)]="userInput"
           (keydown)="onKeyDown($event)"
           [disabled]="isLoading">
         </textarea>
-        <button class="btn btn-primary" (click)="sendMessage()" [disabled]="isLoading || !userInput.trim()">
-          <i class="fas fa-paper-plane"></i>
-        </button>
+
+        <div class="actions d-flex gap-1">
+          <button class="btn btn-light btn-ghost" title="Limpar" (click)="userInput = ''">
+            <i class="fas fa-eraser"></i>
+          </button>
+          <button class="btn btn-primary btn-send" (click)="sendMessage()" [disabled]="isLoading || !userInput.trim()">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
       </div>
       <small class="text-muted mt-1 d-block">Enter para enviar · Shift+Enter para nova linha</small>
     </div>

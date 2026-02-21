@@ -14,7 +14,7 @@ interface UploadFile {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './upload.html',
-  styleUrl: './upload.css'
+  styleUrls: ['./upload.css']
 })
 export class UploadComponent {
 
