@@ -1,3 +1,9 @@
+## [1.5.0](https://github.com/CesarAVB/rag-assistant-frontend/compare/v1.4.0...v1.5.0) (2026-02-21)
+
+### Features
+
+* adicionar página de documentos com funcionalidades de upload e listagem ([1cfd2d7](https://github.com/CesarAVB/rag-assistant-frontend/commit/1cfd2d78f15089aaec3634c4cdc29ea5b29610e5))
+
 ## [1.4.0](https://github.com/CesarAVB/rag-assistant-frontend/compare/v1.3.0...v1.4.0) (2026-02-21)
 
 ### Features
