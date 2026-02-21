@@ -22,6 +22,7 @@ export class ChatComponent implements OnInit {
 
   // Referência ao container de mensagens para controle de scroll automático
   @ViewChild('messagesContainer') messagesContainer!: ElementRef;
+  @ViewChild('chatInput') chatInput!: ElementRef<HTMLTextAreaElement>;
 
   messages: Message[] = [];
   userInput: string = '';
@@ -63,6 +64,7 @@ export class ChatComponent implements OnInit {
     this.userInput = '';
     this.isLoading = true;
     this.scrollToBottom();
+    this.focusInput();
 
     // Envia para o backend e aguarda a resposta
     this.chatService.sendMessage(text, this.conversationId).subscribe({
@@ -74,6 +76,7 @@ export class ChatComponent implements OnInit {
         });
         this.isLoading = false;
         this.scrollToBottom();
+        this.focusInput();
       },
       error: () => {
         this.messages.push({
@@ -83,8 +86,19 @@ export class ChatComponent implements OnInit {
         });
         this.isLoading = false;
         this.scrollToBottom();
+        this.focusInput();
       }
     });
+  }
+
+  private focusInput(): void {
+    setTimeout(() => {
+      try {
+        this.chatInput?.nativeElement?.focus();
+      } catch (e) {
+        // ignore if element not available
+      }
+    }, 50);
   }
 
   // Permite enviar mensagem com Enter (Shift+Enter para quebrar linha)
