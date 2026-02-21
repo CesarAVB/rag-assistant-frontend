@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/CesarAVB/rag-assistant-frontend/compare/v1.1.0...v1.2.0) (2026-02-21)
+
+### Features
+
+* aprimorar estilos e estrutura do chat e upload, incluindo novos elementos e responsividade ([7b69784](https://github.com/CesarAVB/rag-assistant-frontend/commit/7b69784240ed09bf78e911dfe2256292ccef086f))
+
 ## [1.1.0](https://github.com/CesarAVB/rag-assistant-frontend/compare/v1.0.0...v1.1.0) (2026-02-21)
 
 ### Features
