@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://sua-api-producao.com.br'
+  apiUrl: 'https://rag-api.cesaravb.com.br'
 };
