@@ -1,6 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
-  <a class="navbar-brand" routerLink="/chat">
-    <i class="fas fa-robot me-2"></i>Assistente IA
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4" role="navigation" aria-label="Navegação principal">
+  <a class="navbar-brand" routerLink="/chat" aria-label="Início - Assistente IA">
+    <i class="fas fa-robot me-2" aria-hidden="true"></i>
+    <span class="brand-text">Assistente IA</span>
   </a>
 
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -10,13 +11,15 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ms-auto">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/chat" routerLinkActive="active">
-          <i class="fas fa-comments me-1"></i>Chat
+        <a class="nav-link nav-btn nav-btn-primary" routerLink="/chat" routerLinkActive="active" aria-label="Abrir chat">
+          <i class="fas fa-comments me-1" aria-hidden="true"></i>
+          <span>Chat</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/upload" routerLinkActive="active">
-          <i class="fas fa-upload me-1"></i>Documentos
+        <a class="nav-link nav-btn nav-btn-secondary" routerLink="/upload" routerLinkActive="active" aria-label="Ver documentos">
+          <i class="fas fa-upload me-1" aria-hidden="true"></i>
+          <span>Documentos</span>
         </a>
       </li>
     </ul>

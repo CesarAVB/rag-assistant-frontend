@@ -1,9 +1,97 @@
 .navbar-brand {
-  font-weight: 600;
-  font-size: 1.2rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .nav-link.active {
   font-weight: 600;
   border-bottom: 2px solid #fff;
+}
+
+.navbar {
+  padding: 0 12px;
+  box-shadow: 0 4px 18px rgba(2,6,23,0.24);
+  height: 48px;
+  background: linear-gradient(180deg, rgba(13,27,45,0.98), rgba(2,6,23,0.98));
+}
+
+nav.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+}
+
+.navbar-brand i { color: #7dd3fc; font-size: 1rem; }
+
+.brand-text { color: #cbd5e1; letter-spacing: 0.2px; font-weight: 700; }
+
+.navbar-nav { display: flex; gap: .5rem; align-items: center; }
+
+.nav-link {
+  color: #cbd5e1;
+  padding: .35rem .6rem;
+  border-radius: .375rem;
+  transition: background .12s ease, color .12s ease, transform .08s ease;
+}
+
+.nav-link:hover, .nav-link:focus {
+  background: rgba(125,211,252,0.06);
+  color: #7dd3fc;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.nav-link.active {
+  background: rgba(125,211,252,0.08);
+  color: #7dd3fc;
+  font-weight: 700;
+}
+
+/* Button-like variants for header navigation */
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .28rem .6rem;
+  border-radius: .5rem;
+  border: 1px solid transparent;
+  font-weight: 600;
+  background: transparent;
+}
+
+/* Outline minimalista: fundo transparente, borda sutil */
+.nav-btn-primary {
+  color: #7dd3fc;
+  border-color: rgba(125,211,252,0.18);
+  background: transparent;
+}
+
+.nav-btn-secondary {
+  color: #cbd5e1;
+  border-color: rgba(203,213,225,0.06);
+  background: transparent;
+}
+
+.nav-btn:hover, .nav-btn:focus {
+  background: rgba(125,211,252,0.04);
+  transform: translateY(-1px);
+}
+
+.nav-btn:focus {
+  box-shadow: 0 4px 12px rgba(125,211,252,0.08);
+  outline: none;
+}
+
+.nav-btn.active {
+  background: rgba(125,211,252,0.08);
+}
+
+@media (max-width: 575px) {
+  .navbar { padding-left: 8px; padding-right: 8px; }
+  .brand-text { font-size: 0.98rem; }
 }

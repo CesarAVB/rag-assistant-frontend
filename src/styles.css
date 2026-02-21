@@ -15,3 +15,13 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+
+html, body, app-root {
+  height: 100%;
+  overflow: hidden; /* prevent page-level scrolling */
+}
+
+/* On very small screens allow body-level scroll as fallback */
+@media (max-height: 420px) {
+  html, body, app-root { overflow: auto; }
+}

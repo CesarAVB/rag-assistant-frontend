@@ -1,4 +1,19 @@
 .main-content {
-  min-height: calc(100vh - 112px);
-  padding: 24px 0;
+  flex: 1 1 auto;
+  overflow: auto;
+  padding: 20px 16px;
+}
+
+.main-content {
+  margin-top: 48px; /* header height */
+  margin-bottom: 48px; /* footer height */
+  height: calc(100vh - 48px - 48px);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
