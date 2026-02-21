@@ -1,3 +1,9 @@
+## [1.4.0](https://github.com/CesarAVB/rag-assistant-frontend/compare/v1.3.0...v1.4.0) (2026-02-21)
+
+### Features
+
+* adicionar página de dashboard e implementar modal de login com ações de cancelar e entrar ([061636b](https://github.com/CesarAVB/rag-assistant-frontend/commit/061636b7fea19933405d78f94f3ab23f14f90dfd))
+
 ## [1.3.0](https://github.com/CesarAVB/rag-assistant-frontend/compare/v1.2.0...v1.3.0) (2026-02-21)
 
 ### Features
